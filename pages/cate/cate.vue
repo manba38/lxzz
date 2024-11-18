@@ -57,6 +57,7 @@
     },
     methods: {
       // 获取分类列表的数据
+<<<<<<< HEAD
      async getCateList() {
        try {
          // 打印请求发送前的URL
@@ -84,6 +85,24 @@
          console.error('Request failed:', error);
          uni.$showMsg('网络请求失败，请检查网络连接或服务器状态');
        }},
+=======
+      async getCateList() {
+        const { data: res } = await uni.$http.get('https://api-hmugo-web.itheima.net/api/public/v1/categories')
+        if (res.meta.status !== 200) return uni.$showMsg()
+        this.cateList = res.message
+
+        // 为二级分类赋值
+        this.cateLevel2 = res.message[0].children
+      },
+      activeChanged(i) {
+        this.active = i
+
+        // 重新为二级分类赋值
+        this.cateLevel2 = this.cateList[i].children
+
+        this.scrollTop = this.scrollTop === 0 ? 1 : 0
+      },
+>>>>>>> 58ff96ed86440f2f2ec22e00369491b85e51ffde
       // 跳转到商品列表页面
       gotoGoodsList(item) {
         uni.navigateTo({

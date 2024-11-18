@@ -68,7 +68,11 @@
         }
 
         // 1.2 发起请求创建订单
+<<<<<<< HEAD
         const { data: res } = await uni.$http.post('https://api-hmugo-web.itheima.net/api/public/v1/my/orders/create', orderInfo)
+=======
+        const { data: res } = await uni.$http.post('https://www.uinav.com/api/public/v1/my/orders/create', orderInfo)
+>>>>>>> 58ff96ed86440f2f2ec22e00369491b85e51ffde
         if (res.meta.status !== 200) return uni.$showMsg('创建订单失败！')
 
         // 1.3 得到服务器响应的“订单编号”
@@ -76,7 +80,11 @@
 
         // 2. 订单预支付
         // 2.1 发起请求获取订单的支付信息
+<<<<<<< HEAD
         const { data: res2 } = await uni.$http.post('https://api-hmugo-web.itheima.net/api/public/v1/my/orders/req_unifiedorder', { order_number: orderNumber })
+=======
+        const { data: res2 } = await uni.$http.post('https://www.uinav.com/api/public/v1/my/orders/req_unifiedorder', { order_number: orderNumber })
+>>>>>>> 58ff96ed86440f2f2ec22e00369491b85e51ffde
         // 2.2 预付订单生成失败
         if (res2.meta.status !== 200) return uni.$showMsg('预付订单生成失败！')
         // 2.3 得到订单支付相关的必要参数
@@ -88,7 +96,11 @@
         // 3.2 未完成支付
         if (err) return uni.$showMsg('订单未支付！')
         // 3.3 完成了支付，进一步查询支付的结果
+<<<<<<< HEAD
         const { data: res3 } = await uni.$http.post('https://api-hmugo-web.itheima.net/api/public/v1/my/orders/chkOrder', { order_number: orderNumber })
+=======
+        const { data: res3 } = await uni.$http.post('https://www.uinav.com/api/public/v1/my/orders/chkOrder', { order_number: orderNumber })
+>>>>>>> 58ff96ed86440f2f2ec22e00369491b85e51ffde
         // 3.4 检测到订单未支付
         if (res3.meta.status !== 200) return uni.$showMsg('订单未支付！')
         // 3.5 检测到订单支付完成

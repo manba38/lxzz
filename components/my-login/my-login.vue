@@ -46,7 +46,11 @@
           signature: info.signature
         }
 
+<<<<<<< HEAD
         const { data: loginResult } = await uni.$http.post('https://api-hmugo-web.itheima.net/api/public/v1/users/wxlogin', query)
+=======
+        const { data: loginResult } = await uni.$http.post('https://www.uinav.com/api/public/v1/users/wxlogin', query)
+>>>>>>> 58ff96ed86440f2f2ec22e00369491b85e51ffde
         if (loginResult.meta.status !== 200) return uni.$showMsg('登录失败！')
 
         // 直接把 token 保存到 vuex 中
