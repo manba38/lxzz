@@ -8,7 +8,8 @@ export default {
 	},
 	onHide: function() {
 		console.log('App Hide');
-	}
+	},
+	// testtest
 };
 </script>
 
